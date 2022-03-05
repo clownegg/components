@@ -1,4 +1,5 @@
-import Icon, { iconType } from '@/packages/Icon/Icon.vue';
+import Icon from '@/packages/Icon/Icon.vue';
+import { iconList } from '@/packages/Icon/iconList.ts';
 
 export default {
   title: 'Components/Icon',
@@ -13,11 +14,11 @@ const Template = () => ({
   setup() {
     // Story args can be spread into the returned object
     return {
-      iconList: iconType,
+      iconList,
     };
   },
   // Then, the spread values can be accessed directly in the template
-  template: `<icon :name="iconName" v-for="iconName in iconList" :key="iconName" />`,
+  template: `<icon :name="iconName" v-for="iconName in iconList" :key="iconName" size="60px" />`,
 });
 
 export const IconList = Template.bind({});

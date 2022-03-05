@@ -1,4 +1,5 @@
-import Icon, { iconType } from '@/packages/Icon/Icon.vue';
+import Icon from '@/packages/Icon/Icon.vue';
+import { iconList } from '@/packages/Icon/iconList.ts';
 
 export default {
   title: 'Components/Icon',
@@ -7,7 +8,7 @@ export default {
     name: {
       defaultValue: 'calendar',
       control: 'select',
-      options: iconType,
+      options: iconList,
     },
     size: {
       control: 'number',
