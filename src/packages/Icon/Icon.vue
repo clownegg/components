@@ -191,13 +191,13 @@ export default defineComponent({
 </script>
 
 <template>
-  <i class="icon" v-bind="$attrs" :style="style">
+  <i class="cs-icon" v-bind="$attrs" :style="style">
     <component :is="name" />
   </i>
 </template>
 
 <style lang="scss">
-.icon {
+.cs-icon {
   display: inline-flex;
   align-items: center;
 

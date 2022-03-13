@@ -1,0 +1,154 @@
+@mixin variant($color, $theme-color) {
+  color: $color;
+  background-color: $theme-color;
+  border-color: $theme-color;
+
+  & > .cs-icon {
+    color: #fff
+  }
+  & > svg.cs-loading path {
+    stroke: #fff;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color;
+    background-color: mix(#fff, $theme-color, 20%);
+    border-color: mix(#fff, $theme-color, 20%);
+  }
+
+  &:active {
+    color: $color;
+    background-color: mix(#fff, $theme-color, 10%);
+    border-color: mix(#fff, $theme-color, 10%);
+  }
+
+  &:disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background-color: mix($theme-color, #fff);
+      border-color: mix($theme-color, #fff);
+    }
+  }
+
+  &.is-outlined {
+    @include outline($theme-color);
+  }
+
+  &.is-plain {
+    @include plain($theme-color);
+  }
+}
+
+@mixin outline($color) {
+  color: $color;
+  background-color: mix(#fff, $color, 90%);
+  border-color: mix(#fff, $color, 60%);
+
+  & > .cs-icon {
+    color: $color
+  }
+  & > svg.cs-loading path {
+    stroke: $color;
+  }
+
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $color;
+    border-color: $color;
+
+    > .cs-icon {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    color: #fff;
+    background-color: mix(#000, $color, 10%);
+    border-color: mix(#000, $color, 20%);
+
+    > .cs-icon {
+      color: #fff;
+    }
+  }
+
+  &:disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: not-allowed;
+      color: mix(#fff, $color, 40%);
+      background-color: mix(#fff, $color, 90%);
+      border-color: mix(#fff, $color, 80%);
+
+      > .cs-icon {
+        color: mix(#fff, $color, 40%);
+      }
+
+      > svg.cs-loading path {
+        stroke: mix(#fff, $color, 40%);
+      }
+    }
+  }
+}
+
+@mixin plain($color) {
+  color: $color;
+  background-color: transparent;
+  border-color: transparent;
+
+  & > .cs-icon {
+    color: $color;
+  }
+  & > svg.cs-loading path {
+    stroke: $color;
+  }
+
+
+  &:hover,
+  &:focus {
+    color: mix(#fff, $color, 20%);
+    background-color: transparent;
+    border-color: transparent;
+
+    > .cs-icon {
+      color: mix(#fff, $color, 20%);
+    }
+  }
+
+  &:active {
+    color: $color;
+    background-color: mix(#fff, $color, 90%);
+    border-color: transparent;
+
+    > .cs-icon {
+      color: mix(#fff, $color, 90%);
+    }
+  }
+
+  &:disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: not-allowed;
+      color: mix(#fff, $color);
+      background-color: transparent;
+      border-color: transparent;
+
+      > .cs-icon {
+        color: mix(#fff, $color);
+      }
+
+      > svg.cs-loading path {
+        stroke: mix(#fff, $color);
+      }
+    }
+  }
+}
