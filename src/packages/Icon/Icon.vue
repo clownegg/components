@@ -35,6 +35,21 @@ export default defineComponent({
     browser: defineAsyncComponent(() => import('@/icons/IconBrowser.vue')),
     calendar: defineAsyncComponent(() => import('@/icons/IconCalendar.vue')),
     check: defineAsyncComponent(() => import('@/icons/IconCheck.vue')),
+    'chevron-down': defineAsyncComponent(
+      () => import('@/icons/IconChevronDown.vue')
+    ),
+    'chevron-left': defineAsyncComponent(
+      () => import('@/icons/IconChevronLeft.vue')
+    ),
+    'chevron-right': defineAsyncComponent(
+      () => import('@/icons/IconChevronRight.vue')
+    ),
+    'chevron-up': defineAsyncComponent(
+      () => import('@/icons/IconChevronUp.vue')
+    ),
+    'circle-account': defineAsyncComponent(
+      () => import('@/icons/IconCircleAccount.vue')
+    ),
     'circle-arrow-down': defineAsyncComponent(
       () => import('@/icons/IconCircleArrowDown.vue')
     ),
@@ -116,6 +131,7 @@ export default defineComponent({
     'home-outline': defineAsyncComponent(
       () => import('@/icons/IconHomeOutline.vue')
     ),
+    identity: defineAsyncComponent(() => import('@/icons/IconIdentity.vue')),
     import: defineAsyncComponent(() => import('@/icons/IconImport.vue')),
     info: defineAsyncComponent(() => import('@/icons/IconInfo.vue')),
     logout: defineAsyncComponent(() => import('@/icons/IconLogout.vue')),
