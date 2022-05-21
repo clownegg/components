@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { defineProps, defineEmits } from 'vue';
 import Icon from '@/packages/Icon/Icon.vue';
-import { iconList } from '@/packages/Icon/iconList';
 import Loading from '@/packages/Loading/Loading.vue';
+import { iconList } from '@/packages/Icon/iconList';
 
 type IconType = typeof iconList[number];
 const btnTheme = [
@@ -64,8 +64,8 @@ const handleBlur = (event: FocusEvent) => {
       <slot v-if="$slots.loading" name="loading"></slot>
       <loading v-else class="cs-loading" />
     </template>
-    <icon v-else-if="icon" :name="icon" :size="14" />
 
+    <icon v-else-if="icon" :name="icon" :size="14" />
     <span v-if="$slots.default">
       <slot />
     </span>

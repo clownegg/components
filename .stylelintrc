@@ -13,6 +13,7 @@
       }
     ],
     "scss/no-global-function-names": null,
-    "declaration-block-trailing-semicolon": null
+    "declaration-block-trailing-semicolon": null,
+    "selector-class-pattern": null
   }
 }
