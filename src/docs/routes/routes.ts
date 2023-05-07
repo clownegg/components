@@ -2,7 +2,7 @@ import { RouteRecordRaw } from 'vue-router';
 
 export const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: '/components',
     component: () => import('@/docs/pages/home/home.vue'),
   },
   {

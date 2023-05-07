@@ -16,7 +16,7 @@ const handleClick = () => {
         </i>
       </div>
 
-      <router-link to="/" class="v-navbar__link">
+      <router-link to="/components" class="v-navbar__link">
         <span class="v-navbar__title">Components</span>
       </router-link>
     </div>
