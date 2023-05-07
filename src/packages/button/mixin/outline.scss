@@ -1,0 +1,88 @@
+@mixin default-outline() {
+  &:hover,
+  &:focus {
+    color: #409eff;
+    background-color: #fff;
+    border-color: #409eff;
+  }
+
+  &:active {
+    color: mix(#000, #409eff, 10%);
+    background-color: #fff;
+    border-color: mix(#000, #409eff, 10%);
+  }
+
+  &:disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: not-allowed;
+      color: #c0c4cc;
+      background-color: #fff;
+      border-color: #e4e7ed;  
+    }
+  }
+}
+
+@mixin variable-outline($color) {
+  color: $color;
+  background-color: #fff;
+  border-color: mix(#fff, $color, 60%);
+
+  & > .v-icon {
+    color: $color
+  }
+  & > svg.v-loading path {
+    stroke: $color;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $color;
+    border-color: $color;
+
+    > .v-icon {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    color: #fff;
+    background-color: mix(#000, $color, 10%);
+    border-color: mix(#000, $color, 20%);
+
+    > .v-icon {
+      color: #fff;
+    }
+  }
+
+  &:disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: not-allowed;
+      color: mix(#fff, $color, 40%);
+      background-color: mix(#fff, $color, 90%);
+      border-color: mix(#fff, $color, 80%);
+
+      > .v-icon {
+        color: mix(#fff, $color, 40%);
+      }
+
+      > svg.v-loading path {
+        stroke: mix(#fff, $color, 40%);
+      }
+    }
+  }
+}
+
+@mixin outline($color) {
+  @if $color == default {
+    @include default-outline()
+  } @else {
+    @include variable-outline($color)
+  }
+}

@@ -1,0 +1,44 @@
+@mixin variant($color, $theme-color) {
+  color: $color;
+  background-color: $theme-color;
+  border-color: $theme-color;
+
+  & > .v-icon {
+    color: #fff
+  }
+  & > svg.v-loading path {
+    stroke: #fff;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color;
+    background-color: mix(#fff, $theme-color, 20%);
+    border-color: mix(#fff, $theme-color, 20%);
+  }
+
+  &:active {
+    color: $color;
+    background-color: mix(#fff, $theme-color, 10%);
+    border-color: mix(#fff, $theme-color, 10%);
+  }
+
+  &:disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background-color: mix($theme-color, #fff);
+      border-color: mix($theme-color, #fff);
+    }
+  }
+
+  &.--outline {
+    @include outline($theme-color);
+  }
+
+  &.--text {
+    @include text($theme-color);
+  }
+}

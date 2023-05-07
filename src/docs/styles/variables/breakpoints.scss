@@ -1,0 +1,10 @@
+/* BreakPoint */
+$breakpoint-sm: 540px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 991px !default;
+
+$breakpoints: (
+  "sm": $breakpoint-sm,
+  "md": $breakpoint-md,
+  "lg": $breakpoint-lg
+) !default;
