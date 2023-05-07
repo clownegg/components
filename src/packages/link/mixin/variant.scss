@@ -1,0 +1,19 @@
+@mixin variant($color) {
+  .v-link__anchor {
+    color: $color;
+
+    &:hover {
+      color: mix(#fff, $color, 30%);
+    }
+
+    &.is-underline {
+      @include variable-outline($color);
+    }
+  }
+
+  &.is-disabled {
+    .v-link__anchor {
+      color: #c0c4cc;
+    }
+  }
+}

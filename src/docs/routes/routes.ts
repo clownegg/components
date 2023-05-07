@@ -10,6 +10,10 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('@/docs/pages/button/button-page.vue'),
   },
   {
+    path: '/components/link',
+    component: () => import('@/docs/pages/link/link-page.vue'),
+  },
+  {
     path: '/:anymatch(.*)',
     component: () => import('@/docs/pages/not-found/not-found.vue'),
   },
