@@ -1,3 +1,3 @@
-import VBtn from '@/packages/button/v-btn.vue';
+import VBtn from '@/packages/btn/v-btn.vue';
 
 export { VBtn };

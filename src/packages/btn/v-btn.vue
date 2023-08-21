@@ -1,31 +1,24 @@
 <script lang="ts" setup>
-import VLoading from './v-loading.vue';
+import VBtnLoading from './v-btn-loading.vue';
 
-const btnTheme = [
-  'primary',
-  'success',
-  'warning',
-  'info',
-  'danger',
-  'dark',
-] as const;
-type BtnTheme = (typeof btnTheme)[number];
-type DesignType = 'text' | 'outline';
-
-defineProps<{
+type Theme = 'primary' | 'success' | 'warning' | 'info' | 'danger' | 'dark';
+export interface ButtonProps {
   loading?: boolean;
   disabled?: boolean;
-  fluid?: boolean;
+  block?: boolean;
   round?: boolean;
-  design?: DesignType;
-  theme?: BtnTheme;
-}>();
+  shadow?: boolean;
+  theme?: Theme;
+  variant?: 'text' | 'outline';
+}
 
+defineProps<ButtonProps>();
 const emits = defineEmits<{
   (emit: 'click', event: MouseEvent): void;
   (emit: 'focus', event: FocusEvent): void;
   (emit: 'blur', event: FocusEvent): void;
 }>();
+
 const handleClick = (event: MouseEvent) => {
   emits('click', event);
 };
@@ -44,19 +37,20 @@ const handleBlur = (event: FocusEvent) => {
     @click="handleClick"
     @focus="handleFocus"
     @blur="handleBlur"
-    class="v-btn"
     :class="[
+      'v-btn',
       {
-        'is-fluid': fluid,
+        'is-block': block,
         'is-round': round,
+        'is-shadow': shadow,
       },
-      design ? `--${design}` : '',
-      theme ? `--${theme}` : '',
+      variant ? `v-btn--${variant}` : '',
+      theme ? `v-btn--${theme}` : '',
     ]"
   >
     <template v-if="loading">
-      <slot v-if="$slots.loading" name="loading"></slot>
-      <v-loading v-else class="v-loading" />
+      <slot v-if="$slots.loading" name="loading" />
+      <v-btn-loading v-else />
     </template>
 
     <span v-if="$slots.default">
@@ -65,6 +59,4 @@ const handleBlur = (event: FocusEvent) => {
   </button>
 </template>
 
-<style lang="scss">
-@import './style';
-</style>
+<style lang="scss" src="./btn.scss" />

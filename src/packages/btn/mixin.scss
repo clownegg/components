@@ -1,0 +1,235 @@
+$variant-colors: (
+  primary: #0065d8,
+  success: #00995e,
+  warning: #f08300,
+  info: #4d5aaf,
+  danger: #cc002c,
+  dark: #343a40,
+);
+
+@mixin btn-variant() {
+  &--outline {
+    &:hover,
+    &:focus {
+      color: #605266;
+      background-color: #fff;
+      border-color: darken(#dcdfe6, 20%);
+      outline: none;
+    }
+
+    &:active {
+      color: darken(#605266, 15%);
+      background-color: #fff;
+      border-color: darken(#dcdfe6, 20%);
+      outline: none;
+    }
+
+    &:disabled {
+      &,
+      &:hover,
+      &:focus,
+      &:active,
+      &:focus-visible {
+        cursor: not-allowed;
+        color: #c0c4cc;
+        background-color: #fff;
+        border-color: #e4e7ed;  
+      }
+    }
+  }
+
+  &--text {
+    color: #605266;
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: mix(#fff, #605266, 20%);
+      background-color: mix(#fff, #f8fafc, 20%);
+      border-color: transparent;  
+      outline: none;
+    }
+
+    &:active {
+      color: #605266;
+      background-color: mix(#fff, #f5faff, 20%);
+      border-color: transparent;  
+      outline: none;
+    }
+
+    &:disabled {
+      &,
+      &:hover,
+      &:focus,
+      &:active,
+      &:focus-visible {
+        cursor: not-allowed;
+        color: #c0c4cc;
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+
+  @each $theme, $value in $variant-colors {
+    &--#{$theme} {
+      color: #fff;
+      background-color: $value;
+      border-color: $value;
+
+      & > .v-icon {
+        color: #fff;
+      }
+      & > .v-btn-loading path {
+        stroke: #fff;
+      }
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: mix(#fff, $value, 20%);
+        border-color: $value;
+        outline: none;
+      }
+
+      &:active {
+        color: #fff;
+        background-color: mix(#fff, $value, 10%);
+        border-color: darken($value, 5%);
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid lighten($value, 30%);
+        outline-offset: 1px;
+      }
+      outline: none;
+
+
+      &:disabled {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus-visible {
+          color: #fff;
+          background-color: mix($value, #fff);
+          border-color: mix($value, #fff);
+        }
+      }
+    }
+
+    &--#{$theme}.v-btn--outline {
+      color: $value;
+      background-color: #fff;
+      border-color: mix(#fff, $value, 60%);
+
+      & > .v-icon {
+        color: $value
+      }
+
+      & > .v-btn-loading path {
+        stroke: $value;
+      }
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: $value;
+        border-color: $value;
+
+        > .v-icon {
+          color: #fff;
+        }
+      }
+
+      &:active {
+        color: #fff;
+        background-color: mix(#000, $value, 10%);
+        border-color: mix(#000, $value, 20%);
+
+        > .v-icon {
+          color: #fff;
+        }
+      }
+
+      &:disabled {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus-visible {
+          cursor: not-allowed;
+          color: mix(#fff, $value, 40%);
+          background-color: mix(#fff, $value, 98%);
+          border-color: mix(#fff, $value, 80%);
+
+          > .v-icon {
+            color: mix(#fff, $value, 40%);
+          }
+
+          > .v-btn-loading path {
+            stroke: mix(#fff, $value, 40%);
+          }
+        }
+      }
+    }
+
+    &--#{$theme}.v-btn--text {
+      color: $value;
+      background-color: transparent;
+      border-color: transparent;
+
+      & > .v-icon {
+        color: $value;
+      }
+
+      & > .v-btn-loading path {
+        stroke: $value;
+      }
+
+      &:hover,
+      &:focus {
+        color: mix(#fff, $value, 20%);
+        background-color: mix(#fff, $value, 90%);
+        border-color: transparent;
+
+        > .v-icon {
+          color: mix(#fff, $value, 20%)
+        }
+      }
+
+      &:active {
+        color: $value;
+        background-color: saturate(mix(#fff, $value, 90%), 20%);
+        border-color: transparent;
+        
+        > .v-icon {
+          color: mix(#fff, $value, 90%)
+        }
+      }
+
+      &:disabled {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus-visible {
+          cursor: not-allowed;
+          color: mix(#fff, $value);
+          background-color: transparent;
+          border-color: transparent;
+
+          > .v-icon {
+            color: mix(#fff, $value);
+          }
+
+          > .v-btn-loading path {
+            stroke: mix(#fff, $value);
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,4 +16,20 @@
       color: #c0c4cc;
     }
   }
+
+  &.as-button {
+    background-color: $color;
+    border-color: $color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: mix(#fff, $color, 20%);
+      border-color: mix(#fff, $color, 20%);
+    }
+
+    .v-link__anchor {
+      color: #fff;
+    }
+  }
 }

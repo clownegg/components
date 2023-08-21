@@ -10,6 +10,7 @@ import LinkPageDemo from './link-page-demo.vue';
     <link-page-demo title="Example" />
     <link-page-demo title="Disabled" disabled />
     <link-page-demo title="Underline" underline />
+    <link-page-demo title="asButton" as-button />
   </div>
 </template>
 

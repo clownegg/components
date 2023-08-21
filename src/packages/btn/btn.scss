@@ -1,0 +1,76 @@
+@import "./mixin.scss";
+
+.v-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  color: #605266;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  background-color: #fff;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  outline: none;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    color: #605266;
+    background-color: #f8fafc;
+    border-color: #e9ecf2;
+    outline: none;
+  }
+
+  &:active {
+    color: #605266;
+    background-color: #f5faff;
+    border-color: #e9ecf2;
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #a0cfff;
+    outline-offset: 1px;
+  }
+
+  &:disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-visible {
+      cursor: not-allowed;
+      color: #c0c4cc;
+      background-color: #fff;
+      border-color: #e4e7ed;
+      outline: none;
+    }
+  }
+
+  & > .v-btn-loading,
+  & > .v-icon {
+    margin-right: 6px;
+  }
+
+  &.is-block {
+    width: 100%
+  }
+
+  &.is-round {
+    border-radius: 20px;
+  }
+
+  &.is-shadow {
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.4);
+  }
+
+  @include btn-variant()
+}

@@ -9,16 +9,18 @@ const linkTheme = [
   'danger',
   'dark',
 ] as const;
-type Theme = (typeof linkTheme)[number];
 
-const props = defineProps<{
+type Theme = (typeof linkTheme)[number];
+export interface LinkProps {
   href: string;
   external?: boolean;
   theme?: Theme;
   disabled?: boolean;
   underline?: boolean;
-}>();
+  asButton?: boolean;
+}
 
+const props = defineProps<LinkProps>();
 const linkClass = computed(() => [
   'v-link__anchor',
   props.underline ? `is-underline` : '',
@@ -31,8 +33,9 @@ const linkClass = computed(() => [
       'v-link',
       {
         'is-disabled': disabled,
+        'as-button': asButton,
       },
-      theme ? `--${props.theme}` : '',
+      theme ? `--${theme}` : '',
     ]"
     v-bind="$attrs"
   >
