@@ -14,7 +14,7 @@ export const useLayout = () => {
     () => route.path,
     () => {
       toggleSidebar(false);
-    }
+    },
   );
 
   return {

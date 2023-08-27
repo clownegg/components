@@ -1,0 +1,120 @@
+.v-input {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  line-height: 32px;
+  width:100%;
+  font-size: 14px;
+
+  &__container {
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    background-image: none;
+    cursor: text;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #dcdfe6;
+    padding: 1px 11px;
+    width:100%;
+    z-index: 0;
+  }
+
+  &__inner {
+    width: 100%;
+    flex-grow: 1;
+    appearance: none;
+    color: #606266;
+    font-size: inherit;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding: 0;
+    outline: none;
+    border-style: none;
+    background: none;
+  }
+
+  &__prefix {
+    padding-right: 0.5rem;
+    color: #a8dbb2;
+  }
+
+  &__suffix {
+    padding-left: 0.5rem;
+    color: #a8dbb2;
+  }
+
+  &:hover {
+    .v-input__container {
+      box-shadow: 0 0 0 1px #c0c4cc;
+    }
+  }
+
+  &:focus-within {
+    .v-input__container {
+      box-shadow: 0 0 0 1px #409eff; 
+    }
+  }
+
+  &.is-prepend {
+    .v-input__container {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .v-input__prepend {
+      padding: 0 0.5rem;
+      box-shadow: 
+        0 1px 0 0 #dcdfe6,
+        1px 0 0  0 #dcdfe6,
+        0 0 0 1px #dcdfe6;
+      background-color: #f5f7fa;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      color: #909399;
+    }
+  }
+
+  &.is-append {
+    .v-input__container {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .v-input__append {
+      padding: 0 0.5rem;
+      box-shadow: 
+        0 1px 0 0 #dcdfe6, 
+        0 -1px 0 0 #dcdfe6,
+        1px 0 0 0 #dcdfe6,
+        1px 0 0 0 #dcdfe6 inset;
+      background-color: #f5f7fa;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      color: #909399;
+    }
+  }
+
+  .v-input__prepend .v-btn,
+  .v-input__append .v-btn {
+    margin: 0 -0.5rem;
+    color: inherit;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &.is-disabled {
+    .v-input__container {
+      background-color: #f5f7fa;
+      box-shadow: 0 0 0 1px #e4e7ed;
+      cursor: not-allowed;
+    }
+
+    .v-input__inner {
+      color: #a8abb2;
+      cursor: not-allowed;
+    }
+  }
+}

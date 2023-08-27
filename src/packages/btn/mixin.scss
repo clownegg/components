@@ -81,7 +81,7 @@ $variant-colors: (
       & > .v-icon {
         color: #fff;
       }
-      & > .v-btn-loading path {
+      & > .v-btn__loading path {
         stroke: #fff;
       }
 
@@ -129,7 +129,7 @@ $variant-colors: (
         color: $value
       }
 
-      & > .v-btn-loading path {
+      & > .v-btn__loading path {
         stroke: $value;
       }
 
@@ -169,7 +169,7 @@ $variant-colors: (
             color: mix(#fff, $value, 40%);
           }
 
-          > .v-btn-loading path {
+          > .v-btn__loading path {
             stroke: mix(#fff, $value, 40%);
           }
         }
@@ -185,7 +185,7 @@ $variant-colors: (
         color: $value;
       }
 
-      & > .v-btn-loading path {
+      & > .v-btn__loading path {
         stroke: $value;
       }
 
@@ -225,7 +225,7 @@ $variant-colors: (
             color: mix(#fff, $value);
           }
 
-          > .v-btn-loading path {
+          > .v-btn__loading path {
             stroke: mix(#fff, $value);
           }
         }

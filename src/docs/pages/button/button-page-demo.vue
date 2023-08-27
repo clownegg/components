@@ -19,7 +19,7 @@ defineProps<{
 <template>
   <v-showcase>
     <slot>
-      <v-btn variant="text" theme="danger">Default</v-btn>
+      <v-btn >Default</v-btn>
     </slot>
   </v-showcase>
 </template>

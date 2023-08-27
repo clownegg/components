@@ -28,7 +28,9 @@ p code {
   color: #476582;
   background-color: #f6f6f7;
   border-radius: 4px;
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
 }
 
 .mb-4 {
