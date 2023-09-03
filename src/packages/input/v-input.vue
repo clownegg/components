@@ -20,14 +20,16 @@ const {handleInput, handleChange, handleFocus, handleBlur, handleKeydown} = useI
 </script>
 
 <template>
-  <div :class="[
-    'v-input',
-    {
-      'is-disabled': disabled,
-      'is-prepend': $slots.prepend,
-      'is-append': $slots.append
-    }
-  ]">
+  <div 
+    :class="[
+      'v-input',
+      {
+        'is-disabled': disabled,
+        'is-prepend': $slots.prepend,
+        'is-append': $slots.append
+      }
+    ]"
+  >
     <!-- prepend slot -->
     <div v-if="$slots.prepend" class="v-input__prepend">
       <slot name="prepend" />

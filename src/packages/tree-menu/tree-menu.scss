@@ -1,0 +1,58 @@
+.v-tree-menu {
+  font-size: 14px;
+
+  &__items {
+    display: none;
+  }
+
+  &__section[data-depth="0"] {
+    padding-bottom: 24px; 
+  }
+
+  &__section[data-depth="0"].has-active &__items {
+    display: block;
+  }
+
+  &__section:not([data-depth="0"]) &__item {
+    padding: 4px 0;
+  }
+  
+  &__item {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 500;
+  }
+
+  &__link {
+    color: #606266;
+    text-decoration: none;
+    width: 100%;
+
+    &[data-depth="0"] {
+      color: #303133;
+      font-weight: 700;
+    }
+
+    &:hover {
+      color: #213547;
+    }
+  }
+
+  &__section-name {
+    color: #303133;
+    font-weight: 700;
+    margin: 0;
+    font-size: inherit;
+    line-height: 24px;
+  }
+
+  &__caret {
+    color: #3c3c4354;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+} 
